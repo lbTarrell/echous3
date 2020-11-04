@@ -1,0 +1,270 @@
+<style>
+  body {
+    background-color: rgb(74, 152, 241);
+  }
+  .topnav {
+  overflow: hidden;
+  background-color: rgb(71, 64, 64);
+}
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: right;
+  padding: 10px 10px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+
+.topnav a.active {
+  background-color: #8fa4b3;
+  color: rgb(0, 0, 0);
+}
+.sidenav {
+  height: 100%;
+  width: 140px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(71, 64, 64);
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #ffffff;
+  display: block;
+}
+.sidenav a.active {
+  background-color: #8bbbdb;
+  color: rgb(0, 0, 0);
+}
+.sidenav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.main {
+  margin-left: 140px; /* Same as the width of the sidenav */
+}
+input[type=submit] {
+    border-radius: 10px;
+  background-color: rgb(71, 64, 64);
+  border: none;
+  color: white;
+  padding: 10px 8px;
+  text-decoration: none;
+  margin: 3px 2px;
+  cursor: pointer;
+  font-size: 12px; 
+}
+
+input[type=submit]:hover{
+  background-color: orange
+}
+.floatLeft { width: 50%; float: left; }
+.floatRight {width: 50%; float: right; }
+.container { overflow: hidden; }
+
+.center {
+  margin: auto;
+  width: 50%;
+}
+input[id=a] {
+    border-radius: 10px;
+  background-color: #f7f7f7;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 10px 3px;
+  text-decoration: none;
+  margin: 3px 2px;
+  cursor: pointer;
+  text-align: center
+}
+select[id=a] {
+    border-radius: 20px;
+  background-color: #f7f7f7;
+  border: none;
+  color: rgb(23, 25, 32);
+  padding: 10px 7px;
+  text-decoration: none;
+  margin: 3px 2px;
+  cursor: pointer;
+}
+
+  </style>
+<!DOCTYPE html>
+<html>
+<head>
+  
+<title>客戶登記</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/homez10.css') }}">
+</head>
+<body>
+  <div class="main">
+  <div class="topnav">
+    <a><form action="/logout" method="POST">
+      <input type="submit" value="登出"></a>
+      <a><form action="/logout" method="POST">
+        <input type="submit" value="帳號資料"></a>
+        <a><form action="/logout" method="POST">
+          <input type="submit" value="加盟商帳號"></a>
+        <a><img src="./static/eadmin.png" style="width:40px;height:40px;"></a>
+
+
+
+        </form></form></form>
+
+  </div></div>
+  <div class="sidenav">
+  
+    <br><br><br><br><br><br>
+    <a  href="./">首頁</a>
+    <br>
+    <a class="active"  href="./register">客戶登記</a>
+
+    <br>
+    <a  href="./agentrecord">經紀記錄</a>
+    <br>
+    <a href="./clientrecord">客人記錄</a>
+  </div>
+
+
+<div class="main">
+  
+<iframe src="https://www.cognitoforms.com/f/Ix9MB0cRBEeg7wDycUu8uA?id=25" style="position:relative;width:1px;min-width:100%;*width:100%;" frameborder="0" scrolling="yes" seamless="seamless" height="532" width="100%"></iframe>
+<script src="https://www.cognitoforms.com/scripts/embed.js"></script>
+
+
+
+
+
+<div class="center" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+
+      <h2>世紀21｜客戶登記</h2>
+      </div>
+ <br> <br> 
+        <form action="/result" method="POST" >
+          <div class="center" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+
+          <label>地產公司:</label>
+          <select name="z" id='a'>
+            <option value="中華物業">中華物業</option>
+            <option value="奇豐物業">奇豐物業</option>
+            <option value="專尚物業">專尚物業</option>
+            <option value="灝天物業">灝天物業</option>
+          </select>
+          </div>
+          <br>
+          <div class="center" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+
+          <label>經紀姓名:</label>
+          <input style="margin-left: 1em" type="text" name="a1" id='a' >
+
+          <label>經紀電話:</label>
+          <input style="margin-left: 1em" type="text" name="a2" id='a'>
+
+  </div>
+          <br>
+          <div class="center" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+
+          <label>聯絡人:</label>
+          <input style="margin-left: 1em" type="text" name="a3" id='a'>
+    
+          <label>聯絡電話:</label>
+          <input style="margin-left: 1em" type="text" name="a4" id='a'>
+          </div>
+          <br>
+        
+      
+          <div class="center" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+
+            <label>地區:</label>
+            <select id="embarked" name="embarked" id='a'>
+              <option value="新界">新界</option>
+              <option value="九龍">九龍</option>
+              <option value="香港">香港</option>
+            </select>
+      
+            <label>屋苑:</label>
+            <input type="text" name="fare" id='a'>
+            </div>
+            <br>
+            <div class="center" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+
+              <label>實用面積:</label>
+              <input type="text" name="parch" id='a'>
+        
+              <label>裝修類型:</label>
+              <select id="embarked" name="embarked" id='a'>
+                <option value="家居裝修">家居裝修</option>
+                <option value="室內設計">室內設計</option>
+                <option value="商業裝修">商業裝修</option>
+              </select>
+              </div>
+              <br>
+              <div class="center" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+
+                <label>裝修預算:</label>
+                <select id="embarked" name="embarked" id='a'>
+                  <option value="5萬以下">5萬以下</option>
+                  <option value="5-10萬">5-10萬</option>
+                </select>
+          
+                <label>裝修風格:</label>
+                <select id="embarked" name="embarked" id='a'>
+                  <option value="簡約">簡約</option>
+                  <option value="現代風">現代風</option>
+                  <option value="英倫風">英倫風</option>
+                  <option value="復古風">復古風</option>
+                </select>
+                </div>
+                <br>
+                <div class="center" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+
+                  <label>收樓:</label>
+                  <select id="embarked" name="embarked" id='a'>
+                    <option value="已收樓">已收樓</option>
+                    <option value="未收樓">未收樓</option>
+                  </select>
+            
+                  </div>
+                  <br>
+                  <div class="center" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+
+                    <label>簽名:</label>
+                    <input type="text" name="parch" id='a'>
+              
+                    </div>
+                    <br>
+                  <div class="center" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+
+                    
+                    <input type="checkbox" name="parch" id='ab'>
+                    <label for="ab">本人確認以上資料正確無誤。</label><br>
+                  </div>
+                  <br>
+                    <div class="center" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+
+                    <input type="checkbox" name="parch" id='ab'>
+                    
+                    <label for="ab">本人同意EcHouse置業易使用資料。</label><br>
+                    </div>
+                    <br>
+                  
+                    <div class="center" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+
+                    <input type="submit" value="Submit">
+      </form>
+      <a href='https://docs.google.com/spreadsheets/d/16EHpXZe2krtfbRceFg0uVk0ARl55twLvD6N2963mTls/export?format=pdf&gid=0'>PDF</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
